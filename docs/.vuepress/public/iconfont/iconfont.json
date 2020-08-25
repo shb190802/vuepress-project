@@ -1,0 +1,324 @@
+{
+  "id": "1340046",
+  "name": "物业后台",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "物业后台管理系统",
+  "glyphs": [
+    {
+      "icon_id": "16609577",
+      "name": "出行防疫",
+      "font_class": "-trip",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "16609578",
+      "name": "C端维护",
+      "font_class": "-client",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "16609579",
+      "name": "活动管理",
+      "font_class": "-active",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "16609580",
+      "name": "报事报修",
+      "font_class": "-repair",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "16609581",
+      "name": "务工防疫",
+      "font_class": "-migrant",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "16609582",
+      "name": "物业管理",
+      "font_class": "-agency",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "16609583",
+      "name": "疫情统计",
+      "font_class": "-statistics",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "16609584",
+      "name": "疫情管理",
+      "font_class": "-epidemic",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "16609585",
+      "name": "权限",
+      "font_class": "-authority",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "12859340",
+      "name": "编辑",
+      "font_class": "-edit",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "12519796",
+      "name": "优惠券",
+      "font_class": "-coupon",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "11217281",
+      "name": "人脸识别",
+      "font_class": "-uface",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "11199114",
+      "name": "人脸识别",
+      "font_class": "-face",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "11199115",
+      "name": "宣传公告",
+      "font_class": "-notice",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "10990956",
+      "name": "按钮",
+      "font_class": "-button",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "10990957",
+      "name": "菜单",
+      "font_class": "-menu",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "10990958",
+      "name": "部门",
+      "font_class": "-dept",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "10990959",
+      "name": "岗位",
+      "font_class": "-job",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "10833602",
+      "name": "减号",
+      "font_class": "-minus-border",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "10741387",
+      "name": "添加带边框",
+      "font_class": "-add-border",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "10623989",
+      "name": "手机",
+      "font_class": "-phone",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "10623991",
+      "name": "用户",
+      "font_class": "-user",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "10623992",
+      "name": "密码",
+      "font_class": "-password",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "10614236",
+      "name": "地图选点",
+      "font_class": "-map-marker",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "10595890",
+      "name": "帮助",
+      "font_class": "-help",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "10449580",
+      "name": "上传",
+      "font_class": "-upload",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "10449581",
+      "name": "下载",
+      "font_class": "-download",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "10337750",
+      "name": "对号",
+      "font_class": "-right",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "10334056",
+      "name": "4_1_部门",
+      "font_class": "-department",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "10321235",
+      "name": "加号",
+      "font_class": "-add",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "10264602",
+      "name": "2_2_jiantou-1",
+      "font_class": "-arrow-right",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "10264603",
+      "name": "2_2_jiantou-2",
+      "font_class": "-arrow-left",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "10239783",
+      "name": "头像",
+      "font_class": "-avatar",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "10239306",
+      "name": "2_1_sousuo-2",
+      "font_class": "-search",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "10239309",
+      "name": "2_1_wuye",
+      "font_class": "-property",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "10239310",
+      "name": "2_1_shezhi",
+      "font_class": "-setting",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "10239312",
+      "name": "2_1_xiaoqu",
+      "font_class": "-house",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "10239314",
+      "name": "资源-1",
+      "font_class": "-report",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "10239317",
+      "name": "资源-5",
+      "font_class": "-house-user",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "10239318",
+      "name": "资源-2",
+      "font_class": "-home",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "10239321",
+      "name": "资源-4",
+      "font_class": "-manage",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "10239322",
+      "name": "资源-7",
+      "font_class": "-triangle-right",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "10239325",
+      "name": "资源-3",
+      "font_class": "-money",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "10239326",
+      "name": "chengshiguanli-1",
+      "font_class": "-city",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "10239327",
+      "name": "资源-6",
+      "font_class": "-logo",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    }
+  ]
+}
