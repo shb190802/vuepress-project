@@ -1,0 +1,44 @@
+{
+  "editor.tabSize": 2, //tab 2个空格
+  "editor.detectIndentation": false,
+  "workbench.editor.enablePreview": false,
+  "editor.formatOnSave": true, //保存自动格式化
+  "prettier.semi": true, // 去掉结尾分号
+  "prettier.singleQuote": true, // 强制单引号
+  "eslint.autoFixOnSave": true, // 保存时检测
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "html",
+      "autoFix": true
+    }, {
+      "language": "vue",
+      "autoFix": true
+    }, {
+      "language": "js",
+      "autoFix": true
+    }
+  ],
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      "wrap_attributes": "force-expand-multiline"
+    },
+    "prettyhtml": {
+      "printWidth": 100, // 超过100单词换行
+      "singleQuote": false,
+      "wrapAttributes": false, // 属性换行
+      "sortAttributes": false
+    }
+  },
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "editor.minimap.enabled": true,
+  "editor.renderWhitespace": "none",
+  "editor.renderControlCharacters": false,
+  "breadcrumbs.enabled": false,
+  "editor.wordWrap": "wordWrapColumn",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}

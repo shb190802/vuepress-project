@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalbale=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Threejs</title>
+  <style>
+    html,body,div,canvas{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  
+<script src="./js/three.min.js"></script>
+<script>
+var width = window.innerWidth
+var height = window.innerHeight
+var k = width/height
+var s = 200
+
+var scene = new THREE.Scene()
+var geo_earth = new THREE.SphereGeometry(90,30,30)
+var texture = THREE.ImageUtils.loadTexture('./images/land_ocean_ice_cloud_2048.jpg')
+var material_earth = new THREE.MeshLambertMaterial({map: texture})
+var mesh_earth = new THREE.Mesh(geo_earth,material_earth)
+scene.add(mesh_earth)
+
+var point = new THREE.PointLight(0x666666)
+point.position.set(-2000,2000,2000)
+scene.add(point)
+
+var ambient = new THREE.AmbientLight(0xaaaaaa)
+scene.add(ambient)
+
+var camera = new THREE.OrthographicCamera(-s*k,s*k,s,-s)
+camera.position.set(70,30,100)
+camera.lookAt(scene.position)
+
+var renderer = new THREE.WebGLRenderer()
+renderer.setSize(width,height)
+renderer.setClearColor(0x000000,1)
+document.body.appendChild(renderer.domElement)
+
+function render(){
+  renderer.render(scene,camera)
+}
+
+function animate(){
+  mesh_earth.rotateY(0.01)
+  render()
+  requestAnimationFrame(animate)
+}
+animate()
+</script>
+</body>
+</html>

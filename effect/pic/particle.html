@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<style type="text/css">
+body,html,ul,li,canvas{
+	margin: 0;padding:0;
+}
+ul{
+	position:absolute;
+	width:100%;
+	top:375px;
+}
+ul > li{
+	list-style:none;
+	width:20%;
+	float:left;
+}
+ul > li > img{
+	width: 100%;
+	height: auto;
+}
+</style>
+</head>
+<body bgColor="#000000">
+<canvas id="canvas"></canvas>
+<ul>
+	<li><img onclick="loadImg(this.src)" src="images/0.jpg"/><li>
+	<li><img onclick="loadImg(this.src)" src="images/1.jpg"/><li>
+	<li><img onclick="loadImg(this.src)" src="images/2.jpg"/><li>
+	<li><img onclick="loadImg(this.src)" src="images/3.jpg"/><li>
+	<li><img onclick="loadImg(this.src)" src="images/4.jpg"/><li>
+</ul>
+<script>
+var canvas = document.getElementById("canvas") ;
+canvas.style.position = "absolute" ;
+canvas.style.left = 0;
+canvas.style.top = 0 ;
+var cxt = canvas.getContext("2d") ;
+var imgData = null ;
+var blurImgData = null ;
+var list = [];
+var R = 8 ;
+
+function drawParticle(){
+	for(var i = R ; i < canvas.width ; i +=R){
+		for(var j = R ; j < canvas.height ; j +=R){
+			var index = (j*canvas.width+i)*4;
+			list.push({
+				x: i,
+				y: j,
+				c: "rgba("+imgData.data[index]+","+imgData.data[index+1]+","+imgData.data[index+2]+",255)"
+			});
+		}
+	}
+	cxt.clearRect(0,0,canvas.width,canvas.height);
+	for(var i = 0 ; i < list.length; i ++){
+		cxt.beginPath();
+		cxt.fillStyle = list[i].c;
+		cxt.arc(list[i].x,list[i].y,R/2,0,Math.PI*2);
+		cxt.fill();
+		cxt.stroke();
+	}
+}
+
+function getPoint(imgdata,i,j){
+	var index = (j*canvas.width+i)*4;
+	return [imgdata.data[index],imgdata.data[index+1],imgdata.data[index+2],255];
+}
+function loadImg(src){
+	var img = new Image();
+	img.src = src ;
+	img.onload = function(){
+		canvas.width = this.width ;
+		canvas.height = this.height ;
+		cxt.drawImage(this,0,0);
+		imgData = cxt.getImageData(0,0,this.width,this.height);
+		drawParticle();
+	} ;
+}
+loadImg("images/2.jpg");
+document.addEventListener("touchmove",function(e){
+	e.preventDefault();
+});
+</script>
+</body>
+</html>

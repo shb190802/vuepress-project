@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<style type="text/css">
+html{
+	height: 100%;
+}
+html,body,ul,li,canvas{
+	margin: 0;
+	padding: 0;
+}
+#tips{
+	width:100%;
+	position:absolute;
+	height: 24px;
+	background:#FFF;
+	line-height: 24px;
+	font-size:16px;
+	text-align:center;
+}
+</style>
+</head>
+<body bgcolor="#000000">
+<div id="tips">鼠标在屏幕点击得到一棵新的树</div>
+<canvas id="knife"></canvas>
+</body>
+<script>
+var canvas = document.getElementById("knife");
+canvas.style.position = "absolute" ;
+canvas.style.top = 0 ;
+canvas.width = window.innerWidth ;
+canvas.height = window.innerHeight ;
+var cxt = canvas.getContext("2d");
+cxt.lineJoin = "round" ;
+var timers = [];
+
+function drawLine(x,y,deg,width){
+	var x1 = x+width*2*Math.cos(deg) ;
+	var y1 = y-2-width*3*Math.sin(deg) ;
+	console.log(x1,y1);
+	cxt.beginPath();
+	if(width < 3){
+		cxt.strokeStyle = "rgba(0,255,0,0.4)";
+		cxt.arc(x1,y1,width,0,Math.PI*2);
+	}else{
+		cxt.strokeStyle = "#FFF";
+	}
+	cxt.lineWidth = width ;
+	cxt.moveTo(x,y);
+	cxt.lineTo(x1,y1);
+	cxt.stroke();
+	var timer = 0 ;
+	timer = setTimeout(function(){
+		width -= 0.4;
+		if(width > 1){
+			drawLine(x1,y1,deg,width);
+			if(width < 9 && Math.random()*width > 0.5){
+				var dir = [1,-1][Math.round(Math.random())]*0.12*width;
+				width *= 0.8;
+				drawLine(x1,y1,deg+dir,width);
+				if(Math.random() < 0.3)
+					drawLine(x1,y1,deg-dir,width);
+			}
+		}
+	},20);
+	timers.push(timer);
+}
+
+drawLine(canvas.width/2,canvas.height*0.8,Math.PI/2,9.5);
+canvas.addEventListener("mousedown",function(){
+	for(var i = 0 ;i < timers.length ;i ++){
+		clearTimeout(timers[i]);
+	}
+	timers = [];
+	cxt.clearRect(0,0,canvas.width,canvas.height);
+	drawLine(canvas.width/2,canvas.height*0.8,Math.PI/2,9.5);
+});
+</script>
+</html>

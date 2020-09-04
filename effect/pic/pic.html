@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<style type="text/css">
+#box{
+	position:absolute;
+	left:80px;
+	top:80px;
+	width:400px;
+	height:400px;
+}
+.outer{
+	transform-style:preserve-3d;
+	width: 80px;
+	height: 80px;
+	position:absolute;
+	transition:1s;
+}
+.outer > div{
+	position:absolute;
+	width:80px;
+	height:80px;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-color:#FFF;
+}
+.outer > div:nth-child(1){
+	transform:translateZ(40px);
+	z-index:1;
+}
+.outer > div:nth-child(2){
+	transform:rotateY(90deg) translateZ(40px);
+}
+.outer > div:nth-child(3){
+	transform:rotateY(270deg) translateZ(40px);
+}
+.outer > div:nth-child(4){
+	transform:rotateY(180deg) translateZ(40px);
+}
+.outer > div:nth-child(5){
+	transform:rotateX(90deg) translateZ(40px);
+}
+.outer > div:nth-child(6){
+	transform:rotateX(270deg) translateZ(40px);
+}
+</style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+var point = null;
+function init(){
+	var w = 80;
+	for(var i = 0 ; i < 5 ; i ++){
+		for(var j = 0 ; j < 5 ; j ++){
+			var outer = document.createElement("div");
+			outer.id = "div_"+(i*5+j);
+			outer.className = "outer";
+			outer.style.left = j * w +"px";
+			outer.style.top = i * w +"px";
+			for(var k = 0 ; k < 6 ; k ++){
+				var inner = document.createElement("div");
+				inner.style.backgroundImage = "url(images/"+k+".jpg)" ;
+				inner.style.backgroundPosition =  "-"+j*w + "px -" +i*w + "px"
+				outer.appendChild(inner);
+			}
+			box.appendChild(outer);
+		}
+	}
+}
+init();
+document.onmousedown = function(e){
+	point = {x:e.pageX,y:e.pageY}
+}
+document.onmousemove = function(e){
+if(!point)return;
+for(var i = 0 ; i < 25 ; i ++){
+	var obj = document.getElementById("div_"+i);
+	obj.style.transform = "scale(0.6)";
+	obj.addEventListener("transitionend",function(){
+		this.style.transform = "rotateY(90deg)";
+	});
+}}
+document.onmouseup = function(e){
+	point = null
+}
+</script>
+</body>
+</html>
